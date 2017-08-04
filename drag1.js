@@ -1,1 +1,4 @@
 // JavaScript Document
+
+function drag(){
+}
