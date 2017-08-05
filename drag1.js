@@ -7,5 +7,9 @@ function drag(id){
 	obj.onmousedown=function(ev){
 		disX=ev.pangeX-obj.offsetLeft;
 		disY=ev.pangeY-obj.offsetLeft;
+		document.onmousemove=function(ev){
+			obj.style.left=ev.pangeX-disX+'px';
+		    obj.style.top=ev.pangeY-disY+'px';
+		}
 	}
 }
