@@ -5,13 +5,16 @@ function drag(id){
 	var disX=0;
 	var disY=0;
 	obj.onmousedown=function(ev){
-		disX=ev.pangeX-obj.offsetLeft;
-		disY=ev.pangeY-obj.offsetLeft;
-
+		disX=ev.pageX-obj.offsetLeft;
+		disY=ev.pageY-obj.offsetTop;
 		document.onmousemove=function(ev){
-			obj.style.left=ev.pangeX-disX+'px';
-		    obj.style.top=ev.pangeY-disY+'px';
-
+			obj.style.left=ev.pageX-disX+'px';
+		    obj.style.top=ev.pageY-disY+'px';
+		};
+		document.onmouseup=function(){
+		    document.onmousemove=null;
+			document.onmouseup=null;
 		};
 	}
+	return false;
 }
